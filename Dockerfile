@@ -112,6 +112,6 @@ RUN chown -R ${NB_USER} ${HOME}
 ADD fix-permissions /usr/local/bin/fix-permissions
 RUN fix-permissions /etc/jupyter/
 RUN fix-permissions /home/stephan
-
+RUN conda install --quiet --yes scipy
 # Switch back to stephan to avoid accidental container runs as root
 USER ${NB_UID}
